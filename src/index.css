@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family:  sans-serif;
+}
+body{
+  color: white;
+}
+.header{
+  display: block;
+  color: white;
+  text-align: center;
+ 
+}
+.container{
+ margin: 10vw;
+ padding: 1.5em;
+ border: 1px solid rgba(88, 88, 88, 0.959);
+ border-radius: 16px;
+ background-color: rgba(22, 46, 61, 0.966);
+}
+.task{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(45, 83, 109, 0.658);
+  border-left: 2px solid white;
+  margin: 1em 0;
+  padding: 15px;
+  cursor: pointer;
+}
+.taskHeader{
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.done{
+  text-decoration: line-through;
+  color: rgb(88, 88, 88);
+  border-left: 2px solid rgb(24, 177, 70);
+
+}
