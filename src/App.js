@@ -1,5 +1,6 @@
-import {Component} from "react";
+import React,{Component} from "react";
 import Tasks from "./component/Tasks";
+import AddTask from "./component/AddTask";
 
 class App extends Component{ 
 
@@ -50,12 +51,36 @@ class App extends Component{
             }
         );
     }
+
+    addTask = (title, date, reminder) => 
+    {
+        const newTask = 
+        {
+            id: 5,
+            title: title,
+            date: date,
+            reminder: reminder,
+            completed: false,
+        }
+        this.setState({tasks: [...this.state.tasks,newTask]})
+    }
+
+    delete =(id) => {
+        this.setState(
+            {tasks:[...this.state.tasks.filter(task=>task.id!==id)]}
+            );
+    }
     render(){
         return( 
             <div className="container">
+
                 <h1 className="header">Todo</h1>
-                <Tasks tasks={this.state.tasks} markComplete={this.completed}/>
-                
+                <AddTask addTask={this.addTask}/>
+                {this.state.tasks.length>0 ?
+                    <Tasks tasks={this.state.tasks} markComplete={this.completed} delete={this.delete}/>
+                    :
+                    'there is no task'
+                }
             </div>
         ); 
     }
